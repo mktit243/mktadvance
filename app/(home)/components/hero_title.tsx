@@ -30,7 +30,7 @@ const HeroTitle = () => {
         className="flex flex-col justify-center"
       >
         <h2 className="mt-4 text-[24px] transition-all duration-300">
-          Respect et Intégrité au centre de nos procédures
+          <i>Respect et Intégrité au centre de nos procédures</i>
         </h2>
       </Fade>
     </div>
