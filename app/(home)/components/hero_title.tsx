@@ -11,7 +11,7 @@ const HeroTitle = () => {
         <span className="text-red-500 font-bold flex justify-center">
           <FlipText
             className="text-[72px] font-bold tracking-[-0.2em] uppercase inline w-fit"
-            word="MKT Advance"
+            word="MKTAdvance"
           />
           <br />
         </span>

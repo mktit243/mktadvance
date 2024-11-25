@@ -6,7 +6,7 @@ const WhatsappBubble = () => {
     <>
       <FloatingWhatsApp
         phoneNumber="+243819204000"
-        accountName="MKT Advance"
+        accountName="MKTAdvance"
         avatar="/assets/images/assistant.jpg"
         statusMessage="Une touche d'éclat à vos marques"
         chatMessage="Bonjour, comment pouvons-nous vous aider ?"

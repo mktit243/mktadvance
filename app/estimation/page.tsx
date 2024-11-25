@@ -5,7 +5,7 @@ import EstimationForm from "./estimation_form"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Mkt Advance - Devis et estimation",
+  title: "MktAdvance - Devis et estimation",
   description:
     " Besoin de nos services, envoyez-nous une description de votre projet.",
 }

@@ -5,13 +5,13 @@ import "./globals.css";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MKT Advance",
+  title: "MKTAdvance",
   description:
     "Nous sommes une entreprise congolaise spécialisée dans la conception, production et affichage de vos supports de visibilité. Nous créons des espaces de rencontre entre vos marques et les consommateurs.",
   generator: "Next.js",
   keywords: [
     "Marketing",
-    "MKT Advance",
+    "MKTAdvance",
     "Congolaise",
     "Affichage",
     "Publicité",

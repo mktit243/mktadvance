@@ -4,7 +4,7 @@ import Footer from "../(home)/components/footer"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Mkt Advance - A propos de nous",
+    title: "MktAdvance - A propos de nous",
     description: "Nous créons des espaces de rencontre entre vos marques et les consommateurs",
   }
 

@@ -178,7 +178,7 @@ export default async function Home() {
         <div className="w-[40%] max-md:w-full max-md:mb-4">
           <Image
             src="/assets/images/image16_v3.jpg"
-            alt="Directeur MKT Advance"
+            alt="Directeur MKTAdvance"
             width={239}
             height={239}
             className="w-full h-full object-cover"
