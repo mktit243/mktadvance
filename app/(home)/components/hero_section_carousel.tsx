@@ -37,6 +37,7 @@ const HeroSectionCarousel = ({
                 height={1240}
                 className="h-screen w-screen object-cover px-0 mx-0"
                 unoptimized
+                priority
               />
             </CarouselItem>
           ))}
