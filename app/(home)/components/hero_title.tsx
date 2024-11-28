@@ -29,13 +29,8 @@ const HeroTitle = () => {
         delay={0}
         className="flex flex-col justify-center"
       >
-<<<<<<< HEAD
         <h2 className="mt-4 text-[24px] transition-all duration-300 italic">
           Respect et Intégrité au centre de nos procédures
-=======
-        <h2 className="mt-4 text-[24px] transition-all duration-300">
-          <i>Respect et Intégrité au centre de nos procédures</i>
->>>>>>> origin/main
         </h2>
       </Fade>
     </div>
