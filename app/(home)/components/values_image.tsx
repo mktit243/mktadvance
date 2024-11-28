@@ -8,7 +8,7 @@ const ValuesImage = () => {
       <Fade direction="left" triggerOnce>
         <Image
           src="/assets/images/values.jpg"
-          alt="Les valeurs de MKT Advance"
+          alt="Les valeurs de MKTAdvance"
           width={3508}
           height={2480}
         />

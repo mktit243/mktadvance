@@ -23,7 +23,7 @@ export async function generateMetadata({
   const article = await getArticleBySlug(slug)
 
   return {
-    title: article?.title ?? "MKT Advance",
+    title: article?.title ?? "MKTAdvance",
     openGraph: {
       images: [article?.image ?? ""],
     },

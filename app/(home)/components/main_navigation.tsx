@@ -96,7 +96,7 @@ const MainNavigationMenu = ({ services }: { services: Service[] }) => {
               <div className="flex items-center justify-between px-4">
                 <Image
                   src="/assets/images/mkt-advance.png"
-                  alt="MKT Advance Logo"
+                  alt="MKTAdvance Logo"
                   height={262}
                   width={529}
                   className="w-[120px] object-contain mt-4"

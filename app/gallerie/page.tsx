@@ -6,7 +6,7 @@ import GalleriesComponent, { GalleryItem } from "./galleries"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Mkt Advance - Gallérie",
+  title: "MktAdvance - Gallérie",
 }
 
 const Page = async () => {

@@ -11,7 +11,7 @@ const HeroTitle = () => {
         <span className="text-red-500 font-bold flex justify-center">
           <FlipText
             className="text-[72px] max-md:text-[52px] font-bold tracking-[-0.2em] uppercase inline w-fit"
-            word="MKT Advance"
+            word="MKTAdvance"
           />
           <br />
         </span>
@@ -29,8 +29,13 @@ const HeroTitle = () => {
         delay={0}
         className="flex flex-col justify-center"
       >
+<<<<<<< HEAD
         <h2 className="mt-4 text-[24px] transition-all duration-300 italic">
           Respect et Intégrité au centre de nos procédures
+=======
+        <h2 className="mt-4 text-[24px] transition-all duration-300">
+          <i>Respect et Intégrité au centre de nos procédures</i>
+>>>>>>> origin/main
         </h2>
       </Fade>
     </div>
