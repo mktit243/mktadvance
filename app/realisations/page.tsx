@@ -22,6 +22,9 @@ const Page = async () => {
           <h1 className="mt-1 uppercase font-bold text-[32px]">
             Consultez nos Réalisations
           </h1>
+          <p className="font-semibold">
+          Nous sommes spécialisés dans la conception, production et installation des enseignes signalétiques lumineuses en 3D et box lumineux
+          </p>
         </div>
         <Porfolio categories={categories} portfolios={projects} />
       </section>

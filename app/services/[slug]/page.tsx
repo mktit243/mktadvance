@@ -62,7 +62,7 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
               alt={service!.title}
               width={1240}
               height={900}
-              className="w-[80dvw] max-h-[300px] object-contain"
+              className="w-[80dvw] max-h-[60dvh] object-contain"
             />
           )}
         </div>
