@@ -7080,6 +7080,11 @@ react-modal@^3.11.1:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
+react-photo-view@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/react-photo-view/-/react-photo-view-1.2.6.tgz#0302ad35e4590a15a62edb271b5524f76f2777e4"
+  integrity sha512-Fq17yxkMIv0oFp7HOJr39HgCZRP6A9K5T5rixJ4flSUYT2OO3V8vNxEExjhIKgIrfmTu+mDnHYEsI9RRWi1JHw==
+
 react-refractor@^2.1.6, react-refractor@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-refractor/-/react-refractor-2.2.0.tgz#541c282557253a8775a08036dc7928d20c0070b4"

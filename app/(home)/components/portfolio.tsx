@@ -7,6 +7,8 @@ import Image from "next/image"
 import { MouseEventHandler, useMemo, useState } from "react"
 import { Zoom } from "react-awesome-reveal"
 import { CustomImage, PortfolioCategory } from "../utils/projects"
+import { PhotoProvider, PhotoView } from "react-photo-view"
+import "react-photo-view/dist/react-photo-view.css"
 
 // Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
 const keyStr =
@@ -26,33 +28,65 @@ const rgbaDataURL = (r: number, g: number, b: number, a: number) => {
   }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 }
 
-const Porfolio = ({ portfolios, categories }: { portfolios: CustomImage[], categories: PortfolioCategory[] }) => {
-  const [currentCategory, setCurrentCategory] = useState<PortfolioCategory>(categories[0])
+const Porfolio = ({
+  portfolios,
+  categories,
+}: {
+  portfolios: CustomImage[]
+  categories: PortfolioCategory[]
+}) => {
+  const [currentCategory, setCurrentCategory] =
+    useState<PortfolioCategory | null>(null)
 
-  console.log(portfolios)
-
-  const projects = useMemo(
-    () =>
-      portfolios
-        .filter(
-          (p) =>
-            p.category?.map((c) => c._ref).includes(currentCategory._id),
-        )
-        .map((t) => ({
-          ...t,
-          customOverlay: (
-            <div className="custom-overlay__caption">
-              <div>{t.caption}</div>
-            </div>
-          ),
-        })),
-    [currentCategory, portfolios],
-  )
+  const projects = useMemo(() => {
+    if (currentCategory === null) {
+      const uniqueCategories = new Set<string>()
+      return portfolios.reduce<CustomImage[]>((acc, portfolio) => {
+        const categoryId = portfolio.category[0]?._ref // Assuming there's at least one category
+        if (!uniqueCategories.has(categoryId)) {
+          const category = categories.find((c) => c._id === categoryId)
+          uniqueCategories.add(categoryId)
+          acc.push({
+            ...portfolio,
+            customOverlay: (
+              <div className="custom-overlay__caption">
+                <h4 className="text-lg font-semibold underline">
+                  {category?.name}
+                </h4>
+                <div>{portfolio.caption}</div>
+              </div>
+            ),
+          })
+        }
+        return acc
+      }, [])
+    }
+    return portfolios
+      .filter((p) =>
+        currentCategory === null
+          ? true
+          : p.category?.map((c) => c._ref).includes(currentCategory._id),
+      )
+      .map((t) => ({
+        ...t,
+        customOverlay: (
+          <div className="custom-overlay__caption">
+            <div>{t.caption}</div>
+          </div>
+        ),
+      }))
+  }, [currentCategory, portfolios])
 
   const [item, setItem] = useState<CustomImage | null>(null)
 
   const handleClick = (index: number, item: CustomImage) => {
-    setItem(item)
+    if (currentCategory === null) {
+      const category = categories.find((c) => c._id === item.category[0]._ref)
+      if (category) setCurrentCategory(category)
+      setItem(item)
+    } else {
+      setItem(item)
+    }
   }
   const handleClose: MouseEventHandler<HTMLDivElement> = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -84,67 +118,48 @@ const Porfolio = ({ portfolios, categories }: { portfolios: CustomImage[], categ
       <div className="my-5">
         {projects.length === 0 && (
           <div>
-            <Image src="/assets/images/Empty street-bro.svg" alt="Vide" width={300} height={300} className="mx-auto" unoptimized />
+            <Image
+              src="/assets/images/Empty street-bro.svg"
+              alt="Vide"
+              width={300}
+              height={300}
+              className="mx-auto"
+              unoptimized
+            />
             <p className="text-center text-lg mt-3">
-              Désolé, aucune photo n&apos;a été trouvé pour la catégorie sélectionnée.
+              Désolé, aucune photo n&apos;a été trouvé pour la catégorie
+              sélectionnée.
             </p>
           </div>
         )}
         <div className="grid grid-cols-3 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
-          {projects.map((project, index) => (
-            <div
-              key={index + currentCategory._id}
-              className="w-full h-full relative cursor-pointer group"
-            >
-              <Zoom>
-                <Image
-                  src={project.image}
-                  alt={project.caption}
-                  height={project.height}
-                  width={project.width}
-                  placeholder="blur"
-                  quality={80}
-                  blurDataURL={rgbaDataURL(237, 80, 6, 0.2)}
-                  onClick={() => handleClick(index, project)}
-                  className="group-hover:scale-105 group-hover:shadow-lg transition-all ease-linear duration-300"
-                />
-              </Zoom>
+          <PhotoProvider>
+            {projects.map((project, index) => (
               <div
-                className={cn(
-                  "absolute w-full hidden group-hover:block group-hover:scale-105 transition-all ease-linear duration-300",
-                )}
+                key={`${index}__${currentCategory?._id}`}
+                className="w-full h-full relative cursor-pointer group"
               >
-                {project.customOverlay}
+                <div>
+                  {currentCategory ? (
+                    <PhotoView src={project.image}>
+                      <img src={project.image} alt="" />
+                    </PhotoView>
+                  ) : (
+                    <img src={project.image} alt="" onClick={() => handleClick(index, project)} />
+                  )}
+                </div>
+
+                <div
+                  className={cn(
+                    "absolute w-full hidden group-hover:block group-hover:scale-105 transition-all ease-linear duration-300",
+                  )}
+                >
+                  {project.customOverlay}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </PhotoProvider>
         </div>
-        {!!item && (
-          <div className="fixed w-full h-full bg-black/60 top-0 left-0 z-[12]">
-            <div className="flex justify-between items-center py-4 px-12 bg-black text-white">
-              <h1>{item.caption}</h1>
-              <X className="cursor-pointer" onClick={() => setItem(null)} />
-            </div>
-            <div
-              className="w-full h-full flex items-center justify-center"
-              onClick={handleClose}
-            >
-              <Zoom triggerOnce>
-                <Image
-                  src={item.image}
-                  alt={item.caption}
-                  height={item.height}
-                  width={item.width}
-                  placeholder="blur"
-                  quality={80}
-                  blurDataURL={rgbaDataURL(10, 10, 6, 0.2)}
-                  className="h-[70dvh] object-contain"
-                  onClick={() => {}}
-                />
-              </Zoom>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   )

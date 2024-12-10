@@ -17,8 +17,8 @@ const HeroTitle = () => {
         </span>
         <span className="flex">
           <WordPullUp
-            className="text-[52px] max-md:text-[32px] font-semibold leading-[64px] capitalize"
-            words="Nous créons des espaces de rencontre entre vos marques et les consommateurs"
+            className="text-[52px] max-md:text-[32px] font-semibold leading-[64px]"
+            words="Nous Créons des Espaces de Rencontre entre vos Marques et les Consommateurs"
           />
         </span>
       </div>

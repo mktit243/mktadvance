@@ -36,6 +36,7 @@
     "react-grid-gallery": "^1.0.1",
     "react-hook-form": "^7.53.0",
     "react-image-lightbox": "^5.1.4",
+    "react-photo-view": "^1.2.6",
     "sanity": "^3.57.4",
     "styled-components": "^6.1",
     "tailwind-merge": "^2.5.2",
