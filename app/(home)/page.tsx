@@ -137,18 +137,20 @@ export default async function Home() {
       </section>
       <section className="px-[20%] max-md:px-[5%] py-[3rem] max-md:py-[1rem] [&>*]:my-3">
         <Image
-          src="/assets/images/words.png"
+          src="/assets/images/22x122 ok (1).png"
           alt="WORDS"
           height={330}
           width={1801}
           unoptimized
+          className="translate-x-[-28%]"
         />
         <Image
-          src="/assets/images/professionalisme.png"
+          src="/assets/images/22x120 ok (1).png"
           alt="WORDS"
           height={330}
           width={1801}
           unoptimized
+          className="translate-x-[28%]"
         />
       </section>
       {/* <section className="my-6 px-[5%]">

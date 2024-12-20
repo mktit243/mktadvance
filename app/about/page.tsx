@@ -2,11 +2,15 @@ import MainHeader from "@/components/shared/header/main_header"
 import WhoWeAre from "../(home)/components/who_we_are"
 import Footer from "../(home)/components/footer"
 import { Metadata } from "next"
+import { Slide } from "react-awesome-reveal"
+import Image from "next/image"
+import OldWeAre from "./old_who_we_are"
 
 export const metadata: Metadata = {
-    title: "MktAdvance - A propos de nous",
-    description: "Nous créons des espaces de rencontre entre vos marques et les consommateurs",
-  }
+  title: "MktAdvance - A propos de nous",
+  description:
+    "Nous créons des espaces de rencontre entre vos marques et les consommateurs",
+}
 
 const Page = () => {
   return (
@@ -16,7 +20,8 @@ const Page = () => {
           A propos de nous
         </h1>
       </MainHeader>
-      <WhoWeAre />
+
+      <OldWeAre />
       <Footer />
     </main>
   )

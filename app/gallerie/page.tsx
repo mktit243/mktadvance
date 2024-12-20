@@ -38,7 +38,7 @@ const Page = async () => {
     ),
   }))
 
-  const items = [...items1, ...items2]
+  const items = [...items2]
 
   return (
     <main>

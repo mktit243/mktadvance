@@ -41,7 +41,7 @@ const TheyTrustUs = ({ partners }: { partners: Partner[] }) => {
                     width={200}
                     height={120}
                     className={cn(
-                      "object-contain max-h-[70px] opacity-[0.3] filter grayscale hover:opacity-100 hover:filter-none cursor-pointer transition-all duration-300 w-[116px] h-auto align-middle",
+                      "object-contain max-h-[70px]  filter opacity-100 hover:filter-none cursor-pointer transition-all duration-300 w-[116px] h-auto align-middle",
                     )}
                   />
                 </Zoom>

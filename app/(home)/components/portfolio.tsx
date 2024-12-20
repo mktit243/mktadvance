@@ -36,7 +36,7 @@ const Porfolio = ({
   categories: PortfolioCategory[]
 }) => {
   const [currentCategory, setCurrentCategory] =
-    useState<PortfolioCategory | null>(null)
+    useState<PortfolioCategory | null>(categories[6])
 
   const projects = useMemo(() => {
     if (currentCategory === null) {

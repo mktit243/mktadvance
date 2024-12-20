@@ -25,7 +25,9 @@ const Page = async () => {
             NOS SERVICES
           </h5>
           <h1 className="mt-1 uppercase font-bold text-[32px]">
-            Consultez nos services
+            {/* Consultez nos services */}
+            Nous ambitionnons de créer plus de valeur autant pour les marques
+            que pour les consommateurs
           </h1>
         </div>
         <div className="mt-4 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-9">

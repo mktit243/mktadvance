@@ -23,7 +23,9 @@ const Page = async () => {
             Consultez nos Réalisations
           </h1>
           <p className="font-semibold">
-          Nous sommes spécialisés dans la conception, production et installation des enseignes signalétiques lumineuses en 3D et box lumineux
+            {/* Nous sommes spécialisés dans la conception, production et installation des enseignes signalétiques lumineuses en 3D et box lumineux */}
+            Nous créons des espaces de rencontre entre vos marques et les
+            consommateurs
           </p>
         </div>
         <Porfolio categories={categories} portfolios={projects} />
