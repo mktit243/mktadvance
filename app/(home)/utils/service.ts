@@ -43,7 +43,7 @@ export const getServiceBySlug = async (
     query,
     { slug },
     {
-      next: { revalidate: 60 * 60 },
+      next: { revalidate: 0 },
     },
   )
 

@@ -3,16 +3,27 @@ import WhatsappBubble from "@/app/(home)/components/whatsapp_bubble"
 import { getServiceBySlug } from "@/app/(home)/utils/service"
 import MainHeader from "@/components/shared/header/main_header"
 import { urlFor } from "@/sanity/lib/image"
-import { PortableText } from "@portabletext/react"
+import {
+  PortableText,
+  PortableTextBlock,
+  PortableTextComponentProps,
+} from "@portabletext/react"
 import { Metadata } from "next"
 import Image from "next/image"
 import { TypedObject } from "sanity"
+import { toHTML } from "@portabletext/to-html"
+import { cn, extractTextFromPortableTextBlock, slugify } from "@/lib/utils"
+import Link from "next/link"
+import { LinkIcon } from "lucide-react"
 
 type CodeBlock = {
-  value: {
-    language: string
-    code: string
-  }
+  children: string
+}
+
+type HeaderBlock = {
+  level: number
+  color?: string
+  text: string
 }
 
 export async function generateMetadata({
@@ -34,12 +45,115 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const service = await getServiceBySlug(slug)
 
   const components = {
-    types: {
-      code: ({ value }: CodeBlock) => (
-        <pre data-language={value.language}>
-          <code>{value.code}</code>
-        </pre>
+    block: {
+      h1: ({
+        children,
+        value,
+      }: {
+        children: React.ReactNode
+        value: HeaderBlock
+      }) => (
+        <h1
+          id={slugify(value.text)}
+          className={cn(
+            "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mt-8 mb-4",
+            value.color && `text-${value.color}`,
+          )}
+        >
+          {children}
+          <Link
+            href={`#${slugify(value.text)}`}
+            className="opacity-0 hover:opacity-100 ml-2"
+          >
+            <LinkIcon className="inline w-5 h-5" />
+          </Link>
+        </h1>
       ),
+      h2: ({
+        children,
+        value,
+      }: {
+        children: React.ReactNode
+        value: HeaderBlock
+      }) => (
+        <h2
+          id={slugify(value.text)}
+          className={cn(
+            "scroll-m-20 text-3xl font-semibold tracking-tight mt-8 mb-4",
+            value.color && `text-${value.color}`,
+          )}
+        >
+          {children}
+          <Link
+            href={`#${slugify(value.text)}`}
+            className="opacity-0 hover:opacity-100 ml-2"
+          >
+            <LinkIcon className="inline w-5 h-5" />
+          </Link>
+        </h2>
+      ),
+      h3: ({
+        children,
+        value,
+      }: {
+        children: React.ReactNode
+        value: HeaderBlock
+      }) => (
+        <h3
+          id={slugify(value.text)}
+          className={cn(
+            "scroll-m-20 text-2xl font-semibold tracking-tight mt-6 mb-4",
+            value.color && `text-${value.color}`,
+          )}
+        >
+          {children}
+          <Link
+            href={`#${slugify(value.text)}`}
+            className="opacity-0 hover:opacity-100 ml-2"
+          >
+            <LinkIcon className="inline w-5 h-5" />
+          </Link>
+        </h3>
+      ),
+      normal: ({ children }: PortableTextComponentProps<any>) => (
+        <p className="leading-7 [&:not(:first-child)]:mt-6">{children}</p>
+      ),
+    },
+    list: {
+      bullet: ({ children }: PortableTextComponentProps<any>) => (
+        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">{children}</ul>
+      ),
+      number: ({ children }: PortableTextComponentProps<any>) => (
+        <ol className="my-6 ml-6 list-decimal [&>li]:mt-2">{children}</ol>
+      ),
+    },
+    types: {
+      image: ({ value }: any) => (
+        <div className="relative w-full h-[300px] my-8">
+          <Image
+            src={urlFor(value).url()}
+            alt={value.alt || ""}
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+      ),
+    },
+    marks: {
+      link: ({ children, value }: any) => (
+        <a
+          href={value.href}
+          className="text-blue-500 hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      ),
+      strong: ({ children }: any) => (
+        <strong className="font-semibold">{children}</strong>
+      ),
+      em: ({ children }: any) => <em className="italic">{children}</em>,
     },
   }
 
@@ -58,46 +172,19 @@ const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
         <div className="my-6 px-[15%]">
           {Boolean(service?.image) && (
             <Image
-              src="/assets/images/man-sitting.jpeg"
+              src={urlFor(service!.image!).url()}
               alt={service!.title}
               width={1240}
               height={900}
-              className="max-w-[20dvw] object-contain float-left mr-6 mb-6"
+            className="max-w-[20dvw] h-max object-contain float-left mr-6 mb-6"
             />
           )}
-          <p className="text-xl">
-            L'organisation et le sens de l'anticipation sont des leviers de
-            réussite pour une entreprise, quel que soit son secteur d'activités.
-            En développant une bonne stratégie de communication, une entreprise
-            peut facilement augmenter sa visibilité, booster son chiffre
-            d'affaires, améliorer les relations en interne ou encore maîtriser
-            plus efficacement son budget. Ce guide vous permettra d'établir une
-            méthodologie pour créer une stratégie de communication réussie.
-          </p>
-          <h1 className="text-3xl font-bold my-4">
-            10 étapes pour réussir sa stratégie de communication
-          </h1>
-          <ul className="text-xl [&>*]:my-3 list-disc pl-[40%]">
-            <li>Définir les objectifs de sa stratégie de communication</li>
-            <li>Identifier et comprendre sa cible</li>
-            <li>Adapter sa Communication et Trouver son positionnement</li>
-            <li>Définir son style de communication</li>
-            <li>Choisir ses canaux de communication</li>
-            <li>Établir son plan de Communication</li>
-            <li>Établir son budget</li>
-            <li>
-              Adapter et formuler le message à Communication selon les
-              différentes cibles
-            </li>
-            <li>Implémentation de la communication et suivi d’exécution</li>
-            <li>Rapport et recommandations</li>
-          </ul>
-          {/* <div className="my-6 px-[5%] flex flex-col items-start justify-center text-2xl">
+          <div className="my-6 px-[5%] flex flex-col items-start justify-center text-lg">
             <PortableText
               value={service?.content as TypedObject[]}
-              components={components}
+              components={components as unknown as any}
             />
-          </div> */}
+          </div>
         </div>
       </div>
       <Footer />

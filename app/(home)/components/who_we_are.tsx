@@ -7,10 +7,7 @@ const WhoWeAre = () => {
   return (
     <div className="py-20 flex max-md:flex-col-reverse" id="about_us">
       <div className="w-[50%] max-md:w-full px-[5%]">
-        {/* <h2 className="text-4xl max-md:text-3xl font-bold">
-          Qui sommes-nous ?
-        </h2> */}
-        <div className="italic my-3 text-4xl capitalize font-semibold [&>*]:my-5">
+        <div className="italic my-3 text-3xl capitalize font-semibold flex flex-col [&>*]:my-5">
           <p>AGENCE DE CONSEIL EN COMMUNICATION GLOBALE</p>
           <p>
             CONCEPTION PRODUCTION, INSTALLATION DES ENSEIGNES ET SUPPORTS DE
@@ -24,11 +21,6 @@ const WhoWeAre = () => {
           </p>
           <p>AFFICHAGE PUBLICITAIRE</p>
         </div>
-        {/* <p className="mt-6 text-lg font-semibold">
-          Nous croyons en la puissance de l&apos;innovation et de la simplicité.
-          Chaque projet est une opportunité de transformer une idée en réalité,
-          en repoussant les limites de ce qui est possible.
-        </p> */}
       </div>
       <div className="w-[50%] max-md:w-full max-md:mb-4 px-[5%]">
         <Slide direction="right" triggerOnce>

@@ -132,7 +132,7 @@ const Porfolio = ({
             </p>
           </div>
         )}
-        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
+        <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
           <PhotoProvider>
             {projects.map((project, index) => (
               <div

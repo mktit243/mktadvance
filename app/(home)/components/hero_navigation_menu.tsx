@@ -106,7 +106,7 @@ const HeroNaviationMenu = ({
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <Link href="/blog" legacyBehavior passHref>
             <NavigationMenuLink className="group transition-all duration-300 font-semibold flex flex-col">
               Blog
@@ -119,7 +119,7 @@ const HeroNaviationMenu = ({
               ></span>
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem>
           <Link href="/#contact" legacyBehavior passHref>
             <NavigationMenuLink className="group transition-all duration-300 font-semibold flex flex-col">
