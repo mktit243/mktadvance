@@ -263,18 +263,15 @@ export default async function Home() {
         <div className="w-full h-full absolute top-0 left-0 py-[2%] text-white flex flex-col items-center">
           <h2 className="text-3xl font-bold text-center">Notre équipe</h2>
           <p className="my-3 px-[20%] max-lg:px-[5%] text-center">
-            <strong>L&apos;EQUIPE</strong> qui vous accompagne est une
-            concentration d&apos;experts et de consultants ayant travaillée au
-            sein des plus grandes agences et régies publicitaires en République
-            Démocratique du Congo, Congo Brazzaville, en Afrique et au-delà.
-            Avec une connaissance profonde du marché local en RDC, et nous
-            travaillons en collaboration avec d&apos;autres agences en Afrique
-            et au-delà.
+            <strong>L&apos;EQUIPE</strong>qui vous accompagne est composée
+            d&apos;experts et de consultants ayant travaillé au sein des plus
+            grandes agences et régies publicitaires en République Démocratique
+            du Congo, au Congo-Brazzaville, en Afrique, etc...
           </p>
           <p className="my-3 px-[20%] max-lg:px-[5%] text-center">
-            Forte d&apos;une connaissance approfondie du marché local en RDC,
-            Nous collaborons également avec d&apos;autres agences à travers le
-            continent africain et dans le monde.
+            Forte d&apos;une connaissance approfondie du marché local. Nous
+            collaborons également avec d&apos;autres agences à travers le continent
+            africain et dans le monde.
           </p>
           <MktTeam team={team} />
         </div>
