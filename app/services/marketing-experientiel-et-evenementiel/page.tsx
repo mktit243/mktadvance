@@ -129,6 +129,42 @@ const Page = async () => {
             </div>
           </div>
         </div>
+
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-green-700 mb-6">Marketing événementiel :</h3>
+          <p className="text-lg mb-8">
+            l&apos;organisation d&apos;événements (lancements, conférences, festivals) <span className="font-bold italic">Une bonne stratégie est cruciale</span> pour attirer 
+            l&apos;attention, favoriser l&apos;interaction directe avec les clients, et augmenter la visibilité de la marque. 
+            L&apos;événementiel joue sur l&apos;aspect social et permet des interactions réelles qui créent un impact durable.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div className="relative h-[300px]">
+              <Image
+                src="/assets/images/slides/marketing/slides/6ffdb0e4-1a8c-4931-a62e-b05c3d5d6523.jpg"
+                alt="Conférence marketing"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="relative h-[300px]">
+              <Image
+                src="/assets/images/slides/marketing/slides/9c8da756-78e5-41f0-bd31-4467c217818b.jpg"
+                alt="Événement marketing"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="relative h-[300px]">
+              <Image
+                src="/assets/images/slides/marketing/slides/fa9c9f7a-c587-4727-a213-0879b7b4900a.jpg"
+                alt="Lancement produit"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   )
