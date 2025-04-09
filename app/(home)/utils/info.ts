@@ -29,5 +29,5 @@ export const getInfo = async (): Promise<MktInfo> => {
     next: { revalidate: 60 * 60 },
   })
 
-  return { ...info, coor: { lat: info.coor?.[0], long: info.coor?.[1] } }
+  return { ...info, coor: { lat: info?.coor?.[0], long: info?.coor?.[1] } }
 }

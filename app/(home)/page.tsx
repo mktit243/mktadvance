@@ -270,8 +270,8 @@ export default async function Home() {
           </p>
           <p className="my-3 px-[20%] max-lg:px-[5%] text-center">
             Forte d&apos;une connaissance approfondie du marché local. Nous
-            collaborons également avec d&apos;autres agences à travers le continent
-            africain et dans le monde.
+            collaborons également avec d&apos;autres agences à travers le
+            continent africain et dans le monde.
           </p>
           <MktTeam team={team} />
         </div>
@@ -285,7 +285,7 @@ export default async function Home() {
             Contactez-nous
           </h1>
         </div>
-        {info.coor.lat && info.coor.long && (
+        {info && info.coor.lat && info.coor.long && (
           <div className="mt-12">
             <iframe
               className="border-none w-full h-[400px]"
