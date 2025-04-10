@@ -31,7 +31,7 @@ const OldWeAre = () => {
         <p className="mt-6 text-2xl">
           Nous sommes un partenaire fiable pour la planification et l’achat des
           espaces médias en République Démocratique du Congo et au Congo
-          Brazzaville.
+          Brazzaville. J'ai faim
         </p>
       </div>
       <div className="w-[50%] max-md:w-full max-md:mb-4 px-[5%]">
