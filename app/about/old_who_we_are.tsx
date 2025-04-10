@@ -51,7 +51,6 @@ const OldWeAre = () => {
       </div>
     </div>
 
-    <main>
       <div className="h-screen w-screen relative">
         <HeroSectionCarousel images={carouselImages} />
         <div className="bg-black/60 absolute top-0 left-0 h-screen w-screen"></div>
@@ -288,68 +287,7 @@ const OldWeAre = () => {
           <MktTeam team={team} />
         </div>
       </section>
-      <section className="my-12 px-[5%]" id="contact">
-        <div>
-          <h5 className="flex items-center font-bold text-gray-400 opacity-60 after:ml-3 after:content-[''] after:w-[120px] after:h-[2px] after:bg-[#ffde9e] uppercase">
-            Contact
-          </h5>
-          <h1 className="mt-1 uppercase font-bold text-[32px]">
-            Contactez-nous
-          </h1>
-        </div>
-        {info && info.coor.lat && info.coor.long && (
-          <div className="mt-12">
-            <iframe
-              className="border-none w-full h-[400px]"
-              title={`Mkt Advance - ${info.address}`}
-              src={`https://www.google.com/maps?q=${info.coor.lat},${info.coor.long}&output=embed&hl=fr`}
-              allowFullScreen
-            ></iframe>
-          </div>
-        )}
-        <div className="mt-8 flex items-center justify-center max-md:flex-col">
-          <div className="w-[40%] flex flex-col [&>*]:mb-8 max-md:w-full">
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=-4.313828829294465,15.30045616439124"
-              className="flex"
-            >
-              <div className="w-[50px] h-[50px] bg-red-500 flex items-center justify-center">
-                <MapPin className="text-white" />
-              </div>
-              <div className="ml-4">
-                <h4 className="font-bold text-lg">Adresse</h4>
-                <p>
-                  {info.address}, {info.city}
-                </p>
-              </div>
-            </a>
-            <a href={`mailto:${info.email}`} className="flex">
-              <div className="w-[50px] h-[50px] bg-red-500 flex items-center justify-center">
-                <Mail className="text-white" />
-              </div>
-              <div className="ml-4">
-                <h4 className="font-bold text-lg">Adresse e-mail</h4>
-                <p>{info.email}</p>
-              </div>
-            </a>
-            <a href={`tel:${info.phone}`} className="flex">
-              <div className="w-[50px] h-[50px] bg-red-500 flex items-center justify-center">
-                <Phone className="text-white" />
-              </div>
-              <div className="ml-4">
-                <h4 className="font-bold text-lg">Téléphone</h4>
-                <p>{info.phone}</p>
-              </div>
-            </a>
-          </div>
-          <div className="lg:w-8/12 mt-5 mt-lg-0 w-full">
-            <ContactUsForm />
-          </div>
-        </div>
-      </section>
-      <Footer />
-      <WhatsappBubble />
-    </main>
+    
   )
 
 }
