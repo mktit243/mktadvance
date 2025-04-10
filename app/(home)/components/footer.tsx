@@ -90,8 +90,8 @@ const Footer = async () => {
         <div className="text-white max-md:mt-4">
           <h2 className="text-lg font-bold">Demander un devis </h2>
           <p className="max-w-[420px]">
-            Ne manquez jamais une opportunité de rester à jour et de découvrir
-            ce qui se passe dans l&apos;univers de la visibilité et du marketing.
+            Prenez un devis adapté à votre besoin maintenant !
+            Ne ratez pas ce qui se passe dans l&apos;univers de la visibilité et du marketing.
           </p>
           <div className="mt-8 flex justify-start items-center">
             <input
@@ -100,7 +100,7 @@ const Footer = async () => {
               placeholder="Votre email"
             />
             <Button className="bg-red-500 rounded-none min-w-[120px]">
-              Souscrire
+              Laissez votre mail
             </Button>
           </div>
         </div>
