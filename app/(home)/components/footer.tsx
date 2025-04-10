@@ -88,7 +88,7 @@ const Footer = async () => {
           </div>
         </div>
         <div className="text-white max-md:mt-4">
-          <h2 className="text-lg font-bold">Demander un devis</h2>
+          <h2 className="text-lg font-bold">Demander un devis </h2>
           <p className="max-w-[420px]">
             Ne manquez jamais une opportunité de rester à jour et de découvrir
             ce qui se passe dans l&apos;univers de la visibilité et du marketing.
