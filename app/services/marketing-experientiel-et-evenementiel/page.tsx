@@ -166,6 +166,8 @@ const Page = async () => {
           </div>
         </div>
       </div>
+       <Footer />
+      <WhatsappBubble />
     </main>
   )
 }
