@@ -8,7 +8,7 @@ const OldWeAre = () => {
     <div className="py-20 flex max-md:flex-col-reverse" id="about_us">
       <div className="w-[50%] max-md:w-full px-[5%]">
         <h2 className="text-4xl max-md:text-3xl font-bold">
-          Qui sommes-nous MKT ?
+          Qui sommes-nous MKT A ?
         </h2>
         <div className="italic my-3 text-2xl">
           Nous sommes un groupe de professionnels de la communication qui ont
