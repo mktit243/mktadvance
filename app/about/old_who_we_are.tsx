@@ -8,7 +8,7 @@ const OldWeAre = () => {
     <div className="py-20 flex max-md:flex-col-reverse" id="about_us">
       <div className="w-[50%] max-md:w-full px-[5%]">
         <h2 className="text-4xl max-md:text-3xl font-bold">
-          Qui sommes-nous ?
+          Qui sommes-nous MKT ?
         </h2>
         <div className="italic my-3 text-2xl">
           Nous sommes un groupe de professionnels de la communication qui ont
@@ -31,7 +31,7 @@ const OldWeAre = () => {
         <p className="mt-6 text-2xl">
           Nous sommes un partenaire fiable pour la planification et l’achat des
           espaces médias en République Démocratique du Congo et au Congo
-          Brazzaville. J'ai faim
+          Brazzaville.
         </p>
       </div>
       <div className="w-[50%] max-md:w-full max-md:mb-4 px-[5%]">
