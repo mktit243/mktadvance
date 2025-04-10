@@ -1,3 +1,6 @@
+import Footer from "@/app/(home)/components/footer"
+import WhatsappBubble from "@/app/(home)/components/whatsapp_bubble"
+import { Metadata } from "next"
 import { getServiceBySlug } from "@/app/(home)/utils/service"
 import MainHeader from "@/components/shared/header/main_header"
 import Image from 'next/image'
