@@ -1,3 +1,9 @@
+import Footer from "@/app/(home)/components/footer"
+import WhatsappBubble from "@/app/(home)/components/whatsapp_bubble"
+import { getServiceBySlug } from "@/app/(home)/utils/service"
+import MainHeader from "@/components/shared/header/main_header"
+import { Metadata } from "next"
+import Image from "next/image"
 
 const Page = async () => {
   const slug = "marketing-experientiel-et-evenementiel"
